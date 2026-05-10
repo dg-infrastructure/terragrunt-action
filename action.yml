@@ -26,6 +26,9 @@ inputs:
     description: 'Include execution output as comment'
     default: '0'
     required: false
+  tg_comment_url:
+    description: 'The GitHub API URL to post the comment to'
+    required: false
   tg_add_approve:
     description: 'Add -auto-approve to commands which require it when not running interactively'
     default: '1'
@@ -105,5 +108,6 @@ runs:
         INPUT_TG_COMMAND: ${{ inputs.tg_command }}
         INPUT_TG_DIR: ${{ inputs.tg_dir }}
         INPUT_TG_COMMENT: ${{ inputs.tg_comment }}
+        INPUT_TG_COMMENT_URL: ${{ inputs.tg_comment_url }}
         INPUT_TG_ADD_APPROVE: ${{ inputs.tg_add_approve }}
         INPUT_TG_OUTPUT_CAPTURE: ${{ inputs.tg_output_capture }}
